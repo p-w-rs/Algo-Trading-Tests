@@ -1,0 +1,17 @@
+#!/bin/bash
+
+#SBATCH --job-name="90.1024"
+#SBATCH --output=job_%j.out
+#SBATCH --mail-type=ALL
+#SBATCH --mail-user=powersj@msoe.edu
+#SBATCH --partition=teaching
+#SBATCH --nodes=1
+#SBATCH --gres=gpu:t4:1
+#SBATCH --cpus-per-gpu=8
+#SBATCH --mem=0
+
+## SCRIPT START
+
+julia train_lstm.jl 90 1024
+
+## SCRIPT END
